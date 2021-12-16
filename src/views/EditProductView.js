@@ -13,12 +13,12 @@ const EditProductView = () => {
   } = useContext(ProductContext);
   const { categories } = useContext(CategoryContext);
   const { user } = JSON.parse(localStorage.getItem("jwttime2dinate"));
-  const [selected, setSelected] = useState([]);
+
   const { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
-    setSingleProduct({ ...singleProduct });
+    setSingleProduct();
   }, []);
 
   useEffect(() => {
@@ -83,7 +83,7 @@ const EditProductView = () => {
           type="file"
           className="form-control"
         />
-        <input
+        {/* <input
           onChange={handleImageChange}
           placeholder="image2"
           accept="image"
@@ -106,7 +106,7 @@ const EditProductView = () => {
           name="image4"
           type="file"
           className="form-control"
-        />
+        /> */}
 
         {user._id === singleProduct.userOwner._id && (
           <>

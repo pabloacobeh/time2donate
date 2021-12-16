@@ -7,7 +7,7 @@ const HomeView = () => {
 
   return (
     <div className="container mt-5">
-      <h2>Donations</h2>
+      <h2 className="donations">Donations</h2>
       {products.map((product) => (
         <ProductCard key={product._id} obj={product} />
       ))}

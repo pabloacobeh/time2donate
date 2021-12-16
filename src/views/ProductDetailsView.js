@@ -59,7 +59,7 @@ const ProductDetailView = () => {
 
   return (
     <div className="container mt-5 productDetails">
-      <h2>{singleProduct.title}</h2>
+      <header>{singleProduct.title}</header>
       <div className="row">
         <div>
           <b>Category:</b> <h5>{singleProduct.category?.name}</h5>
