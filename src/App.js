@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { ToastContainer } from "react-toastify";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NavBar from "./components/NavBar";
+
+import HomeView from "./views/HomeView";
+import LoginView from "./views/LoginView";
+import SignupView from "./views/SignupView";
+import AuthRoute from "./components/AuthRoute";
+import EditProductView from "./views/EditProductView";
+import ProductDetailView from "./views/ProductDetailsView";
+import AddProductView from "./views/AddProductView";
+import AboutUsView from "../src/views/AboutUsView";
+import CategoriesView from "./views/CategoriesView";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <ToastContainer />
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<HomeView />} />
+        <Route path="/login" element={<LoginView />} />
+        <Route path="/signup" element={<SignupView />} />
+        <Route path="/product/:id" element={<ProductDetailView />} />
+        <Route path="aboutUs" element={<AboutUsView />} />
+        <Route path="/editProduct/:id" element={<EditProductView />} />
+        <Route path="/addProduct" element={<AddProductView />} />
+        <Route path="/categories" element={<CategoriesView />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -1,0 +1,10 @@
+$primary-color: rgb(21, 24, 177);
+$secondary-color: rgb(245, 87, 13);
+
+@import "./navBar/navBar";
+@import "./form/form";
+@import "./productCard/productCard";
+@import "./productDetails/productDetails";
+@import "./aboutUs/aboutus";
+@import "./homeView/homeview";
+@import "./editProduct/editproduct";
