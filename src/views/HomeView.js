@@ -27,21 +27,6 @@ const HomeView = () => {
           </div>
         ))}
       </div>
-
-      {/* <div className="row productCards">
-        {products
-          .filter((product) =>
-            search ? product.title.toLowerCase().includes(search) : product
-          )
-          .map((product) => (
-            <div
-              key={product._id}
-              className="cardBox col-lg-3 col-md-4 col-sm-6 col-xs-12"
-            >
-              <ProductCard obj={product} />
-            </div>
-          ))}
-      </div> */}
     </div>
   );
 };

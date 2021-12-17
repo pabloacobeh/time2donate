@@ -25,7 +25,7 @@ const NavBar = () => {
             <Nav>
               {loggedIn ? (
                 <>
-                  {/* <a style={{ marginTop: 7 }}>Welcome, {user.name}</a> */}
+                  <a style={{ marginTop: 7 }}>Welcome, {user.name}</a>
                   <button onClick={logOutUser} className="btn btn-outline-dakr">
                     Log Out
                   </button>
