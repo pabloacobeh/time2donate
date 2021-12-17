@@ -101,7 +101,7 @@ const AddProductView = () => {
         </select>
         <input
           onChange={handleImageChange}
-          placeholder="image1"
+          placeholder="image"
           accept="image"
           name="image1"
           type="file"
