@@ -48,9 +48,11 @@ const ProductProvider = ({ children }) => {
 
   const editProduct = async (id, obj) => {
     let { user } = JSON.parse(localStorage.getItem(jwt_string));
-    if (obj.userOwner !== user._id) return;
+    console.log("USER", user);
+    console.log(obj);
+    if (obj.userOwner._id !== user._id) return;
     const response = await apiHelper.put(`/products/product/${id}`, obj);
-    toast.sucess("Product updated");
+    toast.success("Product updated");
     getAllProducts();
   };
 

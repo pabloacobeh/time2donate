@@ -18,7 +18,7 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    revalidateToken();
+    // revalidateToken();
   }, [loggedIn]);
 
   const getAllUsers = async (user) => {

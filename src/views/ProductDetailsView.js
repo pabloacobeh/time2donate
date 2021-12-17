@@ -90,7 +90,7 @@ const ProductDetailView = () => {
           />
 
           <div style={{ minHeight: 80 }} className="col-4 tags mt-2">
-            {user && user?._id === singleProduct.userOwner?._id && (
+            {user && (
               <Link to={`/editProduct/${id}`} className="btn btn-outline-dark">
                 Edit
               </Link>

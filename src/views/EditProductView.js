@@ -12,14 +12,23 @@ const EditProductView = () => {
     deleteProduct,
   } = useContext(ProductContext);
   const { categories } = useContext(CategoryContext);
-  const { user } = JSON.parse(localStorage.getItem("jwttime2dinate"));
+  const { user } = JSON.parse(localStorage.getItem("jwttime2donate"));
+  // let user;
 
   const { id } = useParams();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    setSingleProduct();
-  }, []);
+  // useEffect(() => {
+  //   // try {
+  //   //   const response = JSON.parse(localStorage.getItem("jwttime2donate"));
+  //   //   user = response.user;
+  //   //   console.log(user);
+  //   // } catch (error) {
+  //   //   alert("Couldn't find user");
+  //   //   navigate("/");
+  //   // }
+  //   // setSingleProduct();
+  // }, []);
 
   useEffect(() => {
     getProductById(id);
@@ -83,30 +92,6 @@ const EditProductView = () => {
           type="file"
           className="form-control"
         />
-        {/* <input
-          onChange={handleImageChange}
-          placeholder="image2"
-          accept="image"
-          name="image2"
-          type="file"
-          className="form-control"
-        />
-        <input
-          onChange={handleImageChange}
-          placeholder="image3"
-          accept="image"
-          name="image3"
-          type="file"
-          className="form-control"
-        />
-        <input
-          onChange={handleImageChange}
-          placeholder="image4"
-          accept="image"
-          name="image4"
-          type="file"
-          className="form-control"
-        /> */}
 
         {user._id === singleProduct.userOwner._id && (
           <>
