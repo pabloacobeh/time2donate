@@ -59,16 +59,18 @@ const ProductDetailView = () => {
 
   return (
     <div className="container mt-5 productDetails">
-      <header>{singleProduct.title}</header>
+      <header>
+        <b>{singleProduct.title}</b>
+      </header>
       <div className="row">
         <div>
-          <b>Category:</b> <h5>{singleProduct.category?.name}</h5>
+          {/* <b>Category:</b> <h5>{singleProduct.category.name}</h5> */}
         </div>
-        <h4>
+        <h5>
           <b>Description:</b>
-        </h4>
+        </h5>
         <h5>{singleProduct.description}</h5>
-        <p>Donated By {singleProduct.userOwner?.name} </p>
+        {/* <p>Donated By {singleProduct.userOwner?.name} </p> */}
         {comments?.map((comment) => (
           <div key={comment._id}>
             <CommentCard func={() => handleDelete(comment)} comment={comment} />

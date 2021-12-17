@@ -83,7 +83,7 @@ const LoginView = () => {
         <Button className="form-control mt-3" type="submit">
           Log In
         </Button>
-        <GoogleButton />
+        {/* <GoogleButton /> */}
         <Link to="/signup">Don't have an account yet? Signup</Link>
       </Form>
     </div>
