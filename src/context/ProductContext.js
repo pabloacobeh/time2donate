@@ -39,14 +39,16 @@ const ProductProvider = ({ children }) => {
   const createProduct = async (obj) => {
     let { user } = JSON.parse(localStorage.getItem(jwt_string));
     obj.userOwner = user._id;
-    const response = await apiHelper.post("/products/product", obj);
+    const { image1, ...product } = obj;
+    const response = await apiHelper.post("/products/product", product);
+    await imageUpload(response.data._id, image1);
     toast.success("Product created");
     getAllProducts();
   };
 
   const editProduct = async (id, obj) => {
     let { user } = JSON.parse(localStorage.getItem(jwt_string));
-    if (obj.userOwner._id !== user._id) return;
+    if (obj.userOwner !== user._id) return;
     const response = await apiHelper.put(`/products/product/${id}`, obj);
     toast.sucess("Product updated");
     getAllProducts();
@@ -54,7 +56,7 @@ const ProductProvider = ({ children }) => {
 
   const imageUpload = async (id, img) => {
     const formData = new FormData();
-    formData.append("image", img);
+    formData.append("image1", img);
     const response = apiHelper.post(
       `/products/product/imageUpload/${id}`,
       formData

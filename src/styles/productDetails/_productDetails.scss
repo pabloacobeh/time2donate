@@ -20,11 +20,19 @@ body {
   }
 }
 
-// .addProduct {
-//   color: rgba(249, 249, 249, 0.831);
-//   min-height: 200px;
-//   max-width: 400px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
+.addProduct {
+  margin: 20px auto;
+  background-color: rgba(223, 223, 223, 0.673);
+  min-height: 200px;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.categories {
+  margin: 20px auto;
+  background-color: rgba(223, 223, 223, 0.673);
+  min-height: 500px;
+  max-width: 700px;
+}

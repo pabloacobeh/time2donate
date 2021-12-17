@@ -25,19 +25,16 @@ const CategoriesView = () => {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5 categories">
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>#</th>
             <th>Category</th>
-            <th>Action</th>
           </tr>
         </thead>
         <tbody>
           {categories.map((category, i) => (
             <tr key={i}>
-              <td>{i + 1}</td>
               <td>{category.name}</td>
               <td>
                 <button

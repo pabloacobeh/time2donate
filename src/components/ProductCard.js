@@ -7,7 +7,7 @@ const defaultImage =
 
 const ProductCard = ({ obj }) => {
   return (
-    <Card>
+    <Card className="productCard">
       <Card.Body>
         <Card.Title>{obj.title}</Card.Title>
 
