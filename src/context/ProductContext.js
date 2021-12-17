@@ -1,5 +1,6 @@
 import { createContext, useState, UseEffect, useEffect } from "react";
 import apiHelper from "../apiHelper/apiHelper";
+import { toast } from "react-toastify";
 
 export const ProductContext = createContext({});
 
@@ -12,9 +13,9 @@ const ProductProvider = ({ children }) => {
     category: "",
     description: "",
     image1: "",
-    image2: "",
-    image3: "",
-    image4: "",
+    // image2: "",
+    // image3: "",
+    // image4: "",
   });
   useEffect(() => {
     getAllProducts();

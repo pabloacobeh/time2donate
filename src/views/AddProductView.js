@@ -42,9 +42,9 @@ const AddProductView = () => {
     const imageFile = event.target.files[0];
     setProduct({
       ...product,
-      image: imageFile,
+      image1: imageFile,
     });
-    setPreview(URL.createObjectURL(imageFile));
+    // setPreview(URL.createObjectURL(imageFile));
   };
 
   const handleSubmit = async (event) => {
@@ -62,7 +62,7 @@ const AddProductView = () => {
   };
 
   return (
-    <div>
+    <div className="addProduct">
       <form className="form">
         <h2>New Donation</h2>
         <label>Title</label>
@@ -83,14 +83,22 @@ const AddProductView = () => {
           type="text"
           placeholder="description"
         />
-        <option disabled value="Select Category">
-          Category
-        </option>
-        {categories.map((category) => (
-          <option key={category._id} value={category._id}>
-            {category.name}
+        <select
+          onChange={handleChange}
+          defaultValue={"Select Category"}
+          className="form-control"
+          name="category"
+          id=""
+        >
+          <option disabled value="Select Category">
+            Category
           </option>
-        ))}
+          {categories.map((category) => (
+            <option key={category._id} value={category._id}>
+              {category.name}
+            </option>
+          ))}
+        </select>
         <input
           onChange={handleImageChange}
           placeholder="image1"

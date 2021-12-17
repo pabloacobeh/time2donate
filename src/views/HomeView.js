@@ -8,9 +8,11 @@ const HomeView = () => {
   return (
     <div className="container mt-5">
       <h2 className="donations">Donations</h2>
-      {products.map((product) => (
-        <ProductCard key={product._id} obj={product} />
-      ))}
+      <div className="row">
+        {products.map((product) => (
+          <ProductCard key={product._id} obj={product} />
+        ))}
+      </div>
     </div>
   );
 };
